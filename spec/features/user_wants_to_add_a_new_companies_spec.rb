@@ -6,10 +6,16 @@ feature 'User adds a new corp structure', %Q{
   So that I can visualize how the company is structured
 } do
 
-  # before :each do
-  #   @user = FactoryGirl.create(:user)
-  #   login_as(@user)
-  # end
+  before :each do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+
+    click_button 'Log in'
+    # login_as(@user)
+  end
 
   # This test will create the initial company entry within the database
   # subsequent tests will add subsidiaries to the structure.
@@ -19,8 +25,6 @@ feature 'User adds a new corp structure', %Q{
     check 'Is this a Parent Company?'
     click_on 'Add New Corporation'
     expect(page).to have_content('New Corporation created successfully')
-    expect(page).to have_content('Test Parent Company')
-
   end
 
 end

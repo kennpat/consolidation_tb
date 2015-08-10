@@ -1,4 +1,5 @@
 class CorporationsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @corporations = Corporation.all

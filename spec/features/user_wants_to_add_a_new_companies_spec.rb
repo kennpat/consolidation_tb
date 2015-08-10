@@ -19,7 +19,7 @@ feature 'User adds a new corp structure', %Q{
 
   # This test will create the initial company entry within the database
   # subsequent tests will add subsidiaries to the structure.
-  scenario 'User adds three companies to their portfolio' do
+  scenario 'User adds a company to their portfolio' do
     visit new_corporation_path
     fill_in 'Corporation Name', with: 'Test Parent Company'
     check 'Is this a Parent Company?'
@@ -27,4 +27,7 @@ feature 'User adds a new corp structure', %Q{
     expect(page).to have_content('New Corporation created successfully')
   end
 
+  scenario 'User tries to add company without the proper information' do
+
+  end
 end

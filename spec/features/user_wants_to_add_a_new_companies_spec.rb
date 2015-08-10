@@ -28,6 +28,8 @@ feature 'User adds a new corp structure', %Q{
   end
 
   scenario 'User tries to add company without the proper information' do
-
+    visit new_corporation_path
+    click_on 'Add New Corporation'
+    expect(page).to have_content ("Corporation name can't be blank")
   end
 end

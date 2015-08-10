@@ -1,4 +1,12 @@
+
 <body>
+  <div>
+    <% if @corporation.errors.any? %>
+      <% @corporation.errors.full_messages.each do |message| %>
+        <ul><%= message %></ul>
+      <% end %>
+    <% end %>
+  </div>
   <div>
     <%= form_for @corporation do |f| %>
         <%= f.label :corporation_name, 'Corporation Name' %>

@@ -5,6 +5,10 @@ class CorporationsController < ApplicationController
     @corporations = Corporation.all
   end
 
+  def show
+    @corporation = Corporation.find(params[:id])
+  end
+
   def new
     @corporation = Corporation.new
   end
@@ -12,9 +16,23 @@ class CorporationsController < ApplicationController
   def create
     @corporation = Corporation.new(corporation_params)
     if @corporation.save
-      redirect_to corporations_path, notice: 'New Corporation created successfully'
+      redirect_to corporation_path(@corporation.id), notice: 'New Corporation created successfully'
     else
       render :new
+    end
+  end
+
+  def edit
+    @corporation = Corporation.find(params[:id])
+  end
+
+  def update
+    @corporation = Corporation.find(params[:id])
+
+    if @corporation.update(corporation_params)
+      redirect_to corporation_path(@corporation.id), notice: 'Corporation updated successfully'
+    else
+      render :edit
     end
   end
 

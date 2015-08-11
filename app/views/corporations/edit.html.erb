@@ -1,0 +1,17 @@
+<body>
+  <div>
+    <h2>
+      <%= @corporation.corporation_name %>
+    </h2>
+  </div>
+    <%= form_for @corporation do |f| %>
+      <%= f.label :corporation_name, 'Corporation Name' %>
+      <%= f.text_field :corporation_name %>
+
+      <%= f.label :parent_id, 'Is this a Parent Company?' %>
+      <%= f.check_box :parent_id %>
+
+      <%= f.submit 'Update Corporation' %>
+    <% end %>
+  <div>
+</body>

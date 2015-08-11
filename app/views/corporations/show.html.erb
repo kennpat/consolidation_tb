@@ -1,0 +1,10 @@
+<body>
+  <div>
+    <%= @corporation.corporation_name %></br>
+
+    <%= @corporation.id %>
+  </div>
+  <div>
+    <%= link_to 'Edit Corporation', edit_corporation_path(@corporation.id), class: 'small button' %>
+  </div>
+</body>

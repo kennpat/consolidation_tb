@@ -14,7 +14,7 @@ feature 'User adds a new corp structure', %Q{
     fill_in 'Password', with: user.password
 
     click_button 'Log in'
-    # login_as(@user)
+    # login_as(user)
   end
 
   # This test will create the initial company entry within the database
@@ -32,4 +32,6 @@ feature 'User adds a new corp structure', %Q{
     click_on 'Add New Corporation'
     expect(page).to have_content ("Corporation name can't be blank")
   end
+
+
 end

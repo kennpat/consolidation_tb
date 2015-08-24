@@ -27,5 +27,4 @@ feature 'User edits a corp', %Q{
     expect(page).to have_content('Renamed Test Corporation')
   end
 
-
 end

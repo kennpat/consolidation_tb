@@ -1,0 +1,77 @@
+<body>
+  <p>Enter below the financial statement line items for the period</p>
+    <div>
+      <%= form_for @trial_balance do |f| %>
+        <%= f.label :year, 'Year' %>
+        <%= f.text_field :year %>
+
+        <%= f.label :period, 'Period' %>
+        <%= f.text_field :period %>
+        <h4>Balance Sheet</h4>
+        <%= f.label :cash, 'Cash' %>
+        <%= f.text_field :cash %>
+
+        <%= f.label :investments, 'Investments' %>
+        <%= f.text_field :investments %>
+
+        <%= f.label :accounts_receivable, 'Accounts Receivable' %>
+        <%= f.text_field :accounts_receivable %>
+
+        <%= f.label :inventory, 'Inventory' %>
+        <%= f.text_field :inventory %>
+
+        <%= f.label :prepaid_expenses, 'Prepaid Expenses' %>
+        <%= f.text_field :prepaid_expenses %>
+
+        <%= f.label :capital_assets, 'Capital Assets' %>
+        <%= f.text_field :capital_assets %>
+
+        <%= f.label :accumulated_depreciation, 'Accumulated Depreciation' %>
+        <%= f.text_field :accumulated_depreciation %>
+
+        <%= f.label :intangible_assets, 'Intangible Assets' %>
+        <%= f.text_field :intangible_assets %>
+
+        <%= f.label :accumulated_amortization, 'Accumulated Amortization' %>
+        <%= f.text_field :accumulated_amortization %>
+
+        <%= f.label :other_assets, 'Other Assets' %>
+        <%= f.text_field :other_assets %>
+
+        <%= f.label :accounts_payable, 'Accounts Payable' %>
+        <%= f.text_field :accounts_payable %>
+
+        <%= f.label :accrued_expenses, 'Accrued Expenses' %>
+        <%= f.text_field :accrued_expenses %>
+
+        <%= f.label :long_term_liabilities, 'Long-term Liabilities' %>
+        <%= f.text_field :long_term_liabilities %>
+
+        <%= f.label :other_liabilities, 'Other Liabilities' %>
+        <%= f.text_field :other_liabilities %>
+
+        <%= f.label :retained_earnings, 'Retained Earnings' %>
+        <%= f.text_field :retained_earnings %>
+
+        <%= f.label :capital_stock, 'Capital Stock' %>
+        <%= f.text_field :capital_stock %>
+        <h4>Income Statement</h4>
+        <%= f.label :revenue, 'Revenue' %>
+        <%= f.text_field :revenue %>
+
+        <%= f.label :cost_of_goods_sold, 'Cost of Goods Sold' %>
+        <%= f.text_field :cost_of_goods_sold %>
+
+        <%= f.label :selling_general_and_administrative_expense, 'Selling, General, & Administrative Expenses' %>
+        <%= f.text_field :selling_general_and_administrative_expense %>
+
+        <%= f.label :other_income, 'Other Income' %>
+        <%= f.text_field :other_income %>
+
+        <%= f.label :other_expense, 'Other Expense' %>
+        <%= f.text_field :other_expense %>
+
+        <%= f.submit 'Submit' %>
+      <% end %>
+    </div>
+</body>

@@ -20,6 +20,8 @@ feature 'User adds a new corp structure', %Q{
   scenario 'User adds a trial balance to a corporation' do
     visit corporation_path(@corporation.id)
     click_on 'Add new financial period activity'
+    fill_in 'Year', with: 2015
+    fill_in 'Period', with: 'year end'
     fill_in 'Cash', with: 100000
     fill_in 'Investments', with: 0
     fill_in 'Accounts Receivable', with: 450000

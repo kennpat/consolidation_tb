@@ -21,6 +21,7 @@ feature 'User adds a new corp structure', %Q{
     visit corporation_path(@corporation.id)
     click_on 'Add new financial period activity'
     fill_in 'Cash', with: 100000
+    fill_in 'Investments', with: 0
     fill_in 'Accounts Receivable', with: 450000
     fill_in 'Inventory', with: 1200000
     fill_in 'Prepaid Expenses', with: 50000
@@ -33,6 +34,9 @@ feature 'User adds a new corp structure', %Q{
     fill_in 'Other Liabilities', with: -100000
     fill_in 'Retained Earnings', with: -1000000
     fill_in 'Capital Stock', with: -400000
+    fill_in 'Revenue', with: -1100000
+    fill_in 'Cost of Goods Sold', with: 700000
+    fill_in 'Selling, General, & Administrative Expenses', with: 300000
     #note that the total of the entered amounts should be zero
     click_on 'Submit'
     expect(page).to have_content('New Trial Balance created successfully')

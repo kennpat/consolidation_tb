@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :corporations do
+    resources :trial_balances
   end
 
 end

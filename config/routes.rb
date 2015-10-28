@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :corporations do
-    resources :trial_balances, only: [:new, :create]
+    resources :trial_balances, only: [:new, :create, :index]
   end
 
-  resources :trial_balances, only: [:show, :update, :edit, :destroy, :index]
+  resources :trial_balances, only: [:show, :update, :edit, :destroy]
 
 end

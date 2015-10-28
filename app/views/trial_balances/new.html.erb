@@ -1,7 +1,9 @@
 <body>
   <p>Enter below the financial statement line items for the period</p>
     <div>
-      <%= form_for @trial_balance do |f| %>
+      <%= form_for [@corporation, @trial_balance] do |f| %>
+        <%= f.label :corporation_name, @corporation.corporation_name %>
+
         <%= f.label :year, 'Year' %>
         <%= f.text_field :year %>
 
